@@ -1,9 +1,8 @@
 
 package Home;
-
+import com.sun.glass.events.KeyEvent;
 import java.sql.*;
 import java.awt.Color;
-import java.awt.event.KeyEvent;
 import javax.swing.*;
 
 
@@ -29,7 +28,6 @@ public class addcust extends javax.swing.JFrame {
         headpanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        close = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -48,29 +46,17 @@ public class addcust extends javax.swing.JFrame {
         setTitle("City Jeans");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setIconImage(new javax.swing.ImageIcon(getClass().getResource("/Home/images/favicon-32x32.png")).getImage());
-        setUndecorated(true);
 
         mainpanel.setBackground(new java.awt.Color(204, 204, 204));
         mainpanel.setPreferredSize(new java.awt.Dimension(528, 500));
 
         headpanel.setBackground(new java.awt.Color(51, 51, 51));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 26)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("Fill Customer Details");
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Home/images/icons8_more_details_64px.png"))); // NOI18N
-
-        close.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        close.setForeground(new java.awt.Color(255, 255, 255));
-        close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        close.setText("X");
-        close.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        close.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                closeMouseClicked(evt);
-            }
-        });
 
         javax.swing.GroupLayout headpanelLayout = new javax.swing.GroupLayout(headpanel);
         headpanel.setLayout(headpanelLayout);
@@ -80,9 +66,8 @@ public class addcust extends javax.swing.JFrame {
                 .addGap(2, 2, 2)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(close, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         headpanelLayout.setVerticalGroup(
             headpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,11 +76,7 @@ public class addcust extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addContainerGap(15, Short.MAX_VALUE))
             .addGroup(headpanelLayout.createSequentialGroup()
-                .addGroup(headpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(headpanelLayout.createSequentialGroup()
-                        .addComponent(close, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -196,6 +177,7 @@ public class addcust extends javax.swing.JFrame {
         mainpanel.setLayout(mainpanelLayout);
         mainpanelLayout.setHorizontalGroup(
             mainpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(headpanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(mainpanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(mainpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -225,7 +207,6 @@ public class addcust extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(headpanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         mainpanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {back, next});
@@ -303,7 +284,7 @@ public class addcust extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-            Connection conn = DriverManager.getConnection("jdbc:mysql://www.remotemysql.com:3306/rVPGwzQ1zC", "rVPGwzQ1zC", "uMcb3Rj2Qn");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://sql6.freemysqlhosting.net:3306/sql6460932", "sql6460932", "8898");
             String sql = "insert into cust_detail values(?,?,?,?,?)";
             
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -363,7 +344,7 @@ public class addcust extends javax.swing.JFrame {
             }
         }
         else{
-            if(evt.getExtendedKeyCode() == KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode() == KeyEvent.VK_DELETE){
+            if(evt.getExtendedKeyCode() == KeyEvent.VK_BACKSPACE || evt.getExtendedKeyCode() == KeyEvent.VK_DELETE){
                 mob.setEditable(true);
             }
             else{
@@ -371,11 +352,6 @@ public class addcust extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_mobKeyPressed
-
-    private void closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseClicked
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_closeMouseClicked
 
     /**
      * @param args the command line arguments
@@ -415,7 +391,6 @@ public class addcust extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField addr;
     private javax.swing.JButton back;
-    private javax.swing.JLabel close;
     private com.toedter.calendar.JDateChooser delivery;
     private javax.swing.JPanel headpanel;
     private javax.swing.JLabel jLabel1;

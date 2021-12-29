@@ -16,13 +16,6 @@ public class login extends javax.swing.JFrame {
         initComponents();
         
     }
-    
-    private ImageIcon RImage(ImageIcon path){
-    Image i = path.getImage();
-    Image newimg = i.getScaledInstance(Home.home.profile.getWidth(), Home.home.profile.getHeight(), Image.SCALE_SMOOTH);
-    ImageIcon i2 = new ImageIcon(newimg);
-    return i2;
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -41,18 +34,16 @@ public class login extends javax.swing.JFrame {
         login = new javax.swing.JLabel();
         pass = new javax.swing.JPasswordField();
         register = new javax.swing.JLabel();
-        close = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("City Jeans");
         setIconImage(new javax.swing.ImageIcon(getClass().getResource("/Home/images/favicon-32x32.png")).getImage());
         setIconImages(null);
-        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(81, 79, 79));
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 34)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 102, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("<html>CITY JEANS<sup style=\"font-size: 10px;\"> ADMIN</sup></html>");
@@ -90,22 +81,11 @@ public class login extends javax.swing.JFrame {
 
         register.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         register.setForeground(new java.awt.Color(255, 255, 255));
-        register.setText("<html>Employee? <p style=\"color:orange;\">Login here</p></html>");
+        register.setText("<html>Member? <p style=\"color:orange;\">Login here</p></html>");
         register.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         register.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 registerMouseClicked(evt);
-            }
-        });
-
-        close.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        close.setForeground(new java.awt.Color(255, 255, 255));
-        close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        close.setText("X");
-        close.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        close.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                closeMouseClicked(evt);
             }
         });
 
@@ -114,33 +94,30 @@ public class login extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(13, 13, 13)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(register, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
-                                .addGap(18, 18, 18)
-                                .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(user)
-                            .addComponent(pass)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(close, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(register, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(user)
+                    .addComponent(pass))
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(close, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64)
+                .addGap(14, 14, 14)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
                     .addComponent(user))
@@ -151,7 +128,7 @@ public class login extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addComponent(login, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
+                        .addComponent(login, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -163,9 +140,7 @@ public class login extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,7 +156,7 @@ public class login extends javax.swing.JFrame {
         
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://www.remotemysql.com:3306/rVPGwzQ1zC", "rVPGwzQ1zC", "uMcb3Rj2Qn");
+            Connection con = DriverManager.getConnection("jdbc:mysql://sql6.freemysqlhosting.net:3306/sql6460932", "sql6460932", "8898");
             
             String sql = "select * from user where username = ? and password = ?";
             
@@ -194,17 +169,6 @@ public class login extends javax.swing.JFrame {
                 String usr = user.getText();
                 String pss = pass.getText();
                 new home().setVisible(true);
-                String u = rs.getString(1);
-                Blob b = rs.getBlob(3);
-                FileOutputStream out = new FileOutputStream("C://Users/Public/Pictures/" + u + ".jpg");
-                int len = (int) b.length();
-                byte[] buffer = b.getBytes(1, len);
-                out.write(buffer,0,len);
-                
-                buffer = b.getBytes(1, (int)b.length());
-                BufferedImage imag = ImageIO.read(new ByteArrayInputStream(buffer));
-                ImageIcon imgicon = new ImageIcon(imag);
-                Home.home.profile.setIcon(RImage(imgicon));
                 dispose();               
             }
             else{
@@ -213,7 +177,7 @@ public class login extends javax.swing.JFrame {
                 pass.setText("");
             }
             
-            Home.home.welcome.setText(user.getText().toUpperCase());
+            Home.home.profile.setText(user.getText().toUpperCase());
             con.close();
             
         }
@@ -227,11 +191,6 @@ public class login extends javax.swing.JFrame {
         dispose();
         new memberLogin().setVisible(true);
     }//GEN-LAST:event_registerMouseClicked
-
-    private void closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseClicked
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_closeMouseClicked
 
     /**
      * @param args the command line arguments
@@ -269,7 +228,6 @@ public class login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel close;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

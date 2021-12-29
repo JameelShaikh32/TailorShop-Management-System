@@ -11,6 +11,7 @@ import java.awt.Image;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import javafx.stage.FileChooser.ExtensionFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 /**
  *
@@ -42,17 +43,13 @@ public class register extends javax.swing.JFrame {
         register = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        image = new javax.swing.JLabel();
-        imgbtn = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        close = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setUndecorated(true);
 
         panel1.setBackground(new java.awt.Color(81, 79, 79));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 51, 51));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("<html><center>Registeration</center></html>");
@@ -92,7 +89,7 @@ public class register extends javax.swing.JFrame {
         });
 
         register.setBackground(new java.awt.Color(81, 79, 79));
-        register.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        register.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         register.setForeground(new java.awt.Color(255, 51, 51));
         register.setText("Register");
         register.setBorder(null);
@@ -106,35 +103,15 @@ public class register extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Home/images/icons8_password_24px_1.png"))); // NOI18N
 
-        image.setBackground(new java.awt.Color(81, 79, 79));
-
-        imgbtn.setBackground(new java.awt.Color(81, 79, 79));
-        imgbtn.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        imgbtn.setForeground(new java.awt.Color(255, 0, 0));
-        imgbtn.setText("Choose Profile Photo");
-        imgbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                imgbtnActionPerformed(evt);
-            }
-        });
-
-        close.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        close.setForeground(new java.awt.Color(255, 255, 255));
-        close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        close.setText("X");
-        close.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        close.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                closeMouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
         panel1.setLayout(panel1Layout);
         panel1Layout.setHorizontalGroup(
             panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel1Layout.createSequentialGroup()
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1))
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -142,41 +119,25 @@ public class register extends javax.swing.JFrame {
                             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
-                                .addComponent(image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(18, 18, 18)
-                                .addComponent(imgbtn))
                             .addComponent(register, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(rpass, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(ruser, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(0, 20, Short.MAX_VALUE))
                     .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
-                .addComponent(close, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1))
         );
         panel1Layout.setVerticalGroup(
             panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel1Layout.createSequentialGroup()
-                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(close, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel1Layout.createSequentialGroup()
-                        .addGap(77, 77, 77)
-                        .addComponent(imgbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(image, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(28, 28, 28)
+                .addGap(40, 40, 40)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ruser, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
+                    .addComponent(ruser, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(rpass, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -206,15 +167,14 @@ public class register extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://www.remotemysql.com:3306/rVPGwzQ1zC", "rVPGwzQ1zC", "uMcb3Rj2Qn");
+            Connection con = DriverManager.getConnection("jdbc:mysql://sql6.freemysqlhosting.net:3306/sql6460932", "sql6460932", "8898");
 
-            String sql = "insert into user values(?,?,?)";
+            String sql = "insert into user values(?,?)";
 
             PreparedStatement stmt = con.prepareStatement(sql);
             stmt.setString(1, ruser.getText());
             stmt.setString(2, rpass.getText());
-            InputStream in = new FileInputStream(file.toString());
-            stmt.setBlob(3, in);
+
             stmt.executeUpdate();
             JOptionPane.showMessageDialog(null, "You have registered successfully,now you can login..", "CityJeans", JOptionPane.PLAIN_MESSAGE);
             dispose();
@@ -225,11 +185,9 @@ public class register extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_registerActionPerformed
 
-    private void ruserFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ruserFocusGained
+    private void rpassFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_rpassFocusLost
         // TODO add your handling code here:
-        ruser.setText("");
-        ruser.setForeground(new Color(255,51,51));
-    }//GEN-LAST:event_ruserFocusGained
+    }//GEN-LAST:event_rpassFocusLost
 
     private void rpassFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_rpassFocusGained
         // TODO add your handling code here:
@@ -241,29 +199,11 @@ public class register extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ruserFocusLost
 
-    private void rpassFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_rpassFocusLost
+    private void ruserFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ruserFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_rpassFocusLost
-
-    private void imgbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imgbtnActionPerformed
-        // TODO add your handling code here:
-        filechooser = new JFileChooser("user.home");
-        filechooser.setFileFilter(new FileNameExtensionFilter("Image Files",".jpeg","jpg","png"));
-        int returnVal = filechooser.showOpenDialog(panel1);
-        if(returnVal == JFileChooser.APPROVE_OPTION){
-            file = new File(filechooser.getSelectedFile().getPath());
-            ImageIcon imgicon = new ImageIcon(file.toString());
-            Image img = imgicon.getImage();
-            Image newImg = img.getScaledInstance(image.getWidth(), image.getHeight(), Image.SCALE_SMOOTH);
-            ImageIcon imgicon2 = new ImageIcon(newImg);
-            image.setIcon(imgicon2);
-        }
-    }//GEN-LAST:event_imgbtnActionPerformed
-
-    private void closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseClicked
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_closeMouseClicked
+        ruser.setText("");
+        ruser.setForeground(new Color(255,51,51));
+    }//GEN-LAST:event_ruserFocusGained
 
     /**
      * @param args the command line arguments
@@ -301,9 +241,6 @@ public class register extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel close;
-    private javax.swing.JLabel image;
-    private javax.swing.JButton imgbtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

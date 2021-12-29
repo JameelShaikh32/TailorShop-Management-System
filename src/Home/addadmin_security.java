@@ -37,7 +37,6 @@ public class addadmin_security extends javax.swing.JFrame {
         ok = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 102));
 
@@ -129,12 +128,12 @@ public class addadmin_security extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://www.remotemysql.com:3306/rVPGwzQ1zC", "rVPGwzQ1zC", "uMcb3Rj2Qn");
+            Connection con = DriverManager.getConnection("jdbc:mysql://sql6.freemysqlhosting.net:3306/sql6460932", "sql6460932", "8898");
 
             String sql = "select * from user where username = ? and password = ?";
 
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, Home.home.welcome.getText().toLowerCase());
+            ps.setString(1, Home.home.profile.getText().toLowerCase());
             ps.setString(2, adminpass.getText());
             ResultSet rs = ps.executeQuery();
 
