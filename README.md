@@ -1,7 +1,6 @@
 # TailorShop-Management-System
+## It's live project build in my last year of graduation.
 ![alt text](https://github.com/JameelShaikh32/TailorShop-Management-System/blob/main/src/Home/images/splashscreen.png)
-
-##It's live project build in my last year of graduation.
 
 A software that keeps track of customer's order and payment details digitaly. And customers can also do payment online.
 
